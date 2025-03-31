@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Benefícios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Benefícios</h1>
+        
+        <div class="content">
+            <div class="dias-trabalho">
+                <h2>Dias de Trabalho</h2>
+                <div class="dias-semana">
+                    <label><input type="checkbox" value="1" checked> Segunda</label>
+                    <label><input type="checkbox" value="2"> Terça</label>
+                    <label><input type="checkbox" value="3" checked> Quarta</label>
+                    <label><input type="checkbox" value="4" checked> Quinta</label>
+                    <label><input type="checkbox" value="5" checked> Sexta</label>
+                    <label><input type="checkbox" value="6"> Sábado</label>
+                </div>
+            </div>
+
+            <div class="valores">
+                <h2>Valores dos Benefícios</h2>
+                <label>Vale Refeição (VR): R$ <input type="number" id="vr" step="0.01" min="0"></label>
+                <label>Vale Alimentação (VA): R$ <input type="number" id="va" step="0.01" min="0"></label>
+            </div>
+        </div>
+
+        <button id="calcular">Calcular</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
