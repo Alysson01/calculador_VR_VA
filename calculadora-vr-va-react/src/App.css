@@ -1,38 +1,128 @@
 .App {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 50vw;
+    text-align: center;
+    margin: auto;
+}
+
+.container{
+  display: flex;
+  gap: 5rem;
+}
+
+.dias-trabalho{
+  width: 30rem;
+  text-align: left;
+}
+
+input[type="checkbox"]{
+  appearance: none;
+  position: relative;
+  width: 1.125rem;
+  height: 1.125rem;
+  background-color: #fff;
+  border: 0.125rem solid #ccc;
+  border-radius: 0.25rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.75rem;
+    height: 0.75rem;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center;
+    transition: 0.125s transform ease-in-out;
+    box-shadow: inset 1rem 1rem #fff;
+  }
+
+  &:checked {
+    background-color: #1373e0;
+    border-color: #1373e0;
+
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.25;
+  }
+
+  &:focus {
+    border-color: #1373e0;
+
+    & + label {
+      color: #1373e0;
+    }
+  }
+}
+
+form button{
+  display: block;
+  width: 100%;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.beneficios h1{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.beneficios{
+  text-align: left;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.beneficios input{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-top: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.beneficios label{
+  margin-top: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+h2{
+    font-size: 1.7em;
+    margin-bottom: 20px;
+    color: #555;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+label{
+  font-size: 1.5em;
+}
+
+.resultado{
+  background: #eef;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+
+}
+
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
   }
 }
